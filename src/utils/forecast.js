@@ -11,7 +11,7 @@ const forecast = (latitude, longitude, callback) => {
 			callback('unable to fetch location. try again', undefined)
 		}
 		else {
-			callback(undefined, 'there is ' + response.body.current.temperature + ' degree temperature. It feels like ' + response.body.current.feelslike + ' degrees out there.')
+			callback(undefined, response.body.current.weather_descriptions[0] + '.There is ' + response.body.current.temperature + ' degree temperature. It feels like ' + response.body.current.feelslike + ' degrees out there. The chances of rain is ' + response.body.current.precip + '% and humidity is ' + response.body.current.humidity + '%.')
 		}
 	})
 }
